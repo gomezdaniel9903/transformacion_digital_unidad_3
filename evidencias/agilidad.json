@@ -1,0 +1,20 @@
+[
+  {
+    "ciclo": 1,
+    "completadas": 2,
+    "tiempo_ciclo_promedio_min": 10.582565291666667,
+    "ventana_min": 21.175399333333335,
+    "rendimiento_por_hora": 5.666953341045217,
+    "wip_max": 1,
+    "wip_final": 0
+  },
+  {
+    "ciclo": 2,
+    "completadas": 2,
+    "tiempo_ciclo_promedio_min": 2.1526776583333334,
+    "ventana_min": 4.312886016666667,
+    "rendimiento_por_hora": 27.82359643548969,
+    "wip_max": 1,
+    "wip_final": 0
+  }
+]

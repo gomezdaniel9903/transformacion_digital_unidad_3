@@ -1,0 +1,18 @@
+{
+  "salud_status": 200,
+  "salud": {
+    "estado": "activo",
+    "modelo": "59f22c7ce39a40ed8de531e50fe932e7",
+    "uso": "demostracion_sintetica"
+  },
+  "prediccion_status": 200,
+  "prediccion": {
+    "falla_30_dias": 1,
+    "puntaje": 0.723470617872802,
+    "umbral": 0.5,
+    "modelo": "59f22c7ce39a40ed8de531e50fe932e7",
+    "accion": "revision_humana",
+    "advertencia": "Puntaje de datos sinteticos. No es probabilidad industrial validada."
+  },
+  "invalido_status": 422
+}

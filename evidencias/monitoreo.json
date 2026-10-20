@@ -1,0 +1,51 @@
+[
+  {
+    "variable": "antiguedad_equipo_meses",
+    "D": 0.02402777777777776,
+    "p": 0.9203034188891142,
+    "p_holm": 1,
+    "alerta": false
+  },
+  {
+    "variable": "horas_uso_semana",
+    "D": 0.05277777777777776,
+    "p": 0.10976059867606366,
+    "p_holm": 0.6585635920563819,
+    "alerta": false
+  },
+  {
+    "variable": "temperatura_promedio",
+    "D": 0.4640277777777778,
+    "p": 1.303188496753129e-100,
+    "p_holm": 9.122319477271904e-100,
+    "alerta": true
+  },
+  {
+    "variable": "mantenimientos_ultimo_anio",
+    "D": 0.03166666666666662,
+    "p": 0.6680313392117792,
+    "p_holm": 1,
+    "alerta": false
+  },
+  {
+    "variable": "dias_desde_ultimo_mantenimiento",
+    "D": 0.04069444444444448,
+    "p": 0.35196454393927323,
+    "p_holm": 1,
+    "alerta": false
+  },
+  {
+    "variable": "incidentes_previos",
+    "D": 0.018611111111111106,
+    "p": 0.9927088073047778,
+    "p_holm": 1,
+    "alerta": false
+  },
+  {
+    "variable": "carga_promedio_pct",
+    "D": 0.028611111111111143,
+    "p": 0.7819531446422088,
+    "p_holm": 1,
+    "alerta": false
+  }
+]

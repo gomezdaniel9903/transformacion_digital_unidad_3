@@ -1,0 +1,39 @@
+name: Calidad del modelo y servicio
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      umbral:
+        description: '0.50 normal; 1.01 provoca rechazo didáctico'
+        default: '0.50'
+        required: true
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    env:
+      MLFLOW_ENABLE_TELEMETRY: 'false'
+      QUALITY_THRESHOLD: ${{ inputs.umbral || '0.50' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Entrenar configuración seleccionada
+        run: python reconstruir.py --umbral "$QUALITY_THRESHOLD"
+      - name: Pruebas de contrato y servicio
+        run: python -m pytest -q pruebas --junitxml=evidencias/ci_pruebas.xml
+      - name: Construir imagen y comprobar API
+        run: |
+          docker build -t andina-operacion .
+          docker run -d --name andina -p 8000:8000 andina-operacion
+          python verificar_http.py --reintentos 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidencia-ejecucion
+          path: evidencias/

@@ -1,0 +1,16 @@
+{
+  "semilla": 20261019,
+  "filas": 2400,
+  "columnas": 8,
+  "positivos": 647,
+  "prevalencia": 0.26958333333333334,
+  "vacios_pct": 0.0,
+  "intercepto": -1.217140921431349,
+  "dataset_sha256": "cfdfb2b08a0f8a3147a8017f823e5421db0bc75909f51b1c8c90bea915939291",
+  "particiones": {
+    "train": 1440,
+    "validation": 480,
+    "test": 480
+  },
+  "nota": "Predictores independientes por dise\u00f1o. No reproduce f\u00edsica de fallas ni un parque real."
+}

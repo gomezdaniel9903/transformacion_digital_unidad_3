@@ -1,0 +1,10 @@
+{
+  "datos_corruptos_rechazados": true,
+  "pruebas_verdes_codigo": 0,
+  "mutacion_detectada": true,
+  "restauracion_codigo": 0,
+  "alertas_control": [],
+  "alertas_deriva": [
+    "temperatura_promedio"
+  ]
+}
