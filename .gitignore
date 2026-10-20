@@ -8,3 +8,5 @@ evidencias/*.png
 evidencias/*.log
 evidencias/*.xml
 *.tmp
+
+*Zone.Identifier
