@@ -34,6 +34,3 @@ El informe se generó con ReportLab y pypdf del entorno documental disponible; n
 
 ## Equipo y metodología
 Los roles de negocio, mantenimiento, TI y gestión del cambio están propuestos, sin atribuirlos a estudiantes que no han participado todavía. El registro Kanban refleja el trabajo local asistido de esta sesión y su tiempo de pared. No equivale a velocidad o productividad del equipo de 3-4 personas. El equipo debe ejecutar dos ciclos reales y sustituir o complementar esas métricas antes de entregar.
-
-## IA y límites
-Se usó OpenAI Codex para interpretar la guía, proponer el diseño, redactar y ejecutar código, preparar pruebas y elaborar el informe. El estudiante y su equipo deben revisar, comprender y sustentar el contenido. No se simulan entrevistas, adopción real, aprobaciones ni ahorro económico. No se usan datos IDEAM ni DATAINNOVA.
