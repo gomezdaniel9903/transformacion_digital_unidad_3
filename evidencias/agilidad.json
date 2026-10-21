@@ -2,18 +2,27 @@
   {
     "ciclo": 1,
     "completadas": 2,
-    "tiempo_ciclo_promedio_min": 10.582565291666667,
-    "ventana_min": 21.175399333333335,
-    "rendimiento_por_hora": 5.666953341045217,
+    "tiempo_ciclo_promedio_min": 10.219679508333334,
+    "ventana_min": 22.588440583333334,
+    "rendimiento_por_hora": 5.312451718714078,
     "wip_max": 1,
     "wip_final": 0
   },
   {
     "ciclo": 2,
     "completadas": 2,
-    "tiempo_ciclo_promedio_min": 2.1526776583333334,
-    "ventana_min": 4.312886016666667,
-    "rendimiento_por_hora": 27.82359643548969,
+    "tiempo_ciclo_promedio_min": 7.0890635416666665,
+    "ventana_min": 47.27039576666667,
+    "rendimiento_por_hora": 2.538586742373322,
+    "wip_max": 1,
+    "wip_final": 0
+  },
+  {
+    "ciclo": 3,
+    "completadas": 1,
+    "tiempo_ciclo_promedio_min": 29.13826303333333,
+    "ventana_min": 29.13826303333333,
+    "rendimiento_por_hora": 2.0591481356099277,
     "wip_max": 1,
     "wip_final": 0
   }

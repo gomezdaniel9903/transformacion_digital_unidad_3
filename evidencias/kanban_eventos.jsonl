@@ -1,8 +1,10 @@
-{"fecha": "2026-10-19T07:55:51.523942+00:00", "ciclo": 1, "tarea": "Datos y validacion", "estado": "inicio"}
-{"fecha": "2026-10-19T08:07:19.229511+00:00", "ciclo": 1, "tarea": "Datos y validacion", "estado": "fin"}
-{"fecha": "2026-10-19T08:07:19.845636+00:00", "ciclo": 1, "tarea": "Experimentacion y puerta", "estado": "inicio"}
-{"fecha": "2026-10-19T08:17:02.047902+00:00", "ciclo": 1, "tarea": "Experimentacion y puerta", "estado": "fin"}
-{"fecha": "2026-10-19T08:17:02.464658+00:00", "ciclo": 2, "tarea": "API y pruebas", "estado": "inicio"}
-{"fecha": "2026-10-19T08:19:33.236612+00:00", "ciclo": 2, "tarea": "API y pruebas", "estado": "fin"}
-{"fecha": "2026-10-19T08:19:33.688454+00:00", "ciclo": 2, "tarea": "Monitoreo y cierre", "estado": "inicio"}
-{"fecha": "2026-10-19T08:21:21.237819+00:00", "ciclo": 2, "tarea": "Monitoreo y cierre", "estado": "fin"}
+{"fecha": "2026-10-20T03:34:07.316706+00:00", "ciclo": 1, "tarea": "Repo y CI verde/rojo", "estado": "inicio"}
+{"fecha": "2026-10-20T03:44:03.725048+00:00", "ciclo": 1, "tarea": "Repo y CI verde/rojo", "estado": "fin"}
+{"fecha": "2026-10-20T03:46:12.669942+00:00", "ciclo": 1, "tarea": "Docker y verificacion", "estado": "inicio"}
+{"fecha": "2026-10-20T03:56:42.623141+00:00", "ciclo": 1, "tarea": "Docker y verificacion", "estado": "fin"}
+{"fecha": "2026-10-20T04:05:56.814878+00:00", "ciclo": 2, "tarea": "Capturas de anexos", "estado": "inicio"}
+{"fecha": "2026-10-20T04:10:02.302935+00:00", "ciclo": 2, "tarea": "Capturas de anexos", "estado": "fin"}
+{"fecha": "2026-10-20T04:43:07.839056+00:00", "ciclo": 2, "tarea": "Actualizar informe", "estado": "inicio"}
+{"fecha": "2026-10-20T04:53:13.038624+00:00", "ciclo": 2, "tarea": "Actualizar informe", "estado": "fin"}
+{"fecha": "2026-10-20T05:00:53.201984+00:00", "ciclo": 3, "tarea": "Ejecutar Github Actions Workflow", "estado": "inicio"}
+{"fecha": "2026-10-20T05:30:01.497766+00:00", "ciclo": 3, "tarea": "Ejecutar Github Actions Workflow", "estado": "fin"}

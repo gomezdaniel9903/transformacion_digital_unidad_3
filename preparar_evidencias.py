@@ -9,7 +9,7 @@ import pandas as pd
 E=Path('evidencias')
 events=[json.loads(x) for x in (E/'kanban_eventos.jsonl').read_text().splitlines()]
 results=[]
-for cycle in [1,2]:
+for cycle in sorted({e['ciclo'] for e in events}):
     ev=[e for e in events if e['ciclo']==cycle];starts={};dur=[];wip=0;peak=0
     for e in ev:
         t=datetime.fromisoformat(e['fecha'])

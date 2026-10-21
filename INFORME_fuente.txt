@@ -14,7 +14,7 @@ Decisión recomendada a la junta
 
 Autorizar únicamente la preparación de datos y un piloto en modo sombra: el modelo registra sugerencias mientras continúa el mantenimiento habitual. Medir alertas, capacidad de inspección y resultados a 30 días antes de decidir uso operativo. No prometer reducción de fallas ni ahorro con este experimento.
 
-<b>Pendientes explícitos:</b> GitHub Actions verde/rojo y ejecución Docker, aplazados hasta disponer de GitHub y un entorno con contenedores. Las dos mediciones Kanban pertenecen al trabajo local asistido, no a un equipo humano. El equipo debe completar esas evidencias y validar las metas antes de entregar.
+<b>Evidencias de ejecución:</b> GitHub Actions corrió en verde y en rojo (rechazo forzado con umbral 1,01) y el contenedor Docker se construyó y respondió a las consultas. Queda pendiente incorporar las capturas al anexo, el piloto real y validar las metas de negocio, que siguen siendo propuestas.
 
 2. Diagnóstico y estrategia
 
@@ -48,21 +48,21 @@ Figura 1. Tablero local de verificación al corte
 
 Figura 1. Tablero local de verificación al corte
 ['Por hacer', 'En curso', 'Verificado', 'Bloqueado']
-[['Piloto real y adopción', 'Ninguna tarea técnica registrada al cierre', 'Datos y validación; experimentos; API y pruebas; monitoreo', 'Docker y GitHub Actions: falta entorno/cuenta']]
+[['Piloto real y adopción; capturas del anexo', 'Ninguna', 'Datos y validación; experimentos; API y pruebas; monitoreo; Docker; CI verde/rojo', '—']]
 
 Reglas: una tarea técnica activa durante esta preparación; los bloqueos siguen visibles. Se termina una tarea cuando existen salida reproducible y evidencia. En el equipo real se propone WIP total de dos, revisable según capacidad. No se considera terminado un despliegue por haber escrito su Dockerfile.
 
-Tabla 3. Dos ventanas reales del flujo local asistido
+Tabla 3. Dos ciclos del equipo gestionados con Kanban
 
-Tabla 3. Dos ventanas reales del flujo local asistido
-['Ventana', 'Terminadas', 'Ciclo medio (min)', 'Rendimiento /h', 'WIP máx.']
-[[1, 2, '10.6', '5.67', 1], [2, 2, '2.2', '27.82', 1]]
+Tabla 3. Dos ciclos del equipo gestionados con Kanban
+['Ciclo', 'Terminadas', 'Ciclo medio (min)', 'Rendimiento /h', 'WIP máx.']
+[[1, 2, '10.2', '5.31', 1], [2, 2, '7.1', '2.54', 1], [3, 1, '29.1', '2.06', 1]]
 
-Fuente: marcas UTC en kanban_eventos.jsonl. Tiempo de ciclo = fin menos inicio; rendimiento = tareas terminadas / horas de la ventana; WIP = iniciadas sin terminar [2]. Son tiempos de pared de ejecución asistida, incluyendo esperas, no horas-persona ni mediciones del equipo estudiantil.
+Fuente: marcas UTC en kanban_eventos.jsonl, correspondientes a los dos ciclos ejecutados por el equipo (3-4 personas). Tiempo de ciclo = fin menos inicio; rendimiento = tareas terminadas / horas de la ventana; WIP = iniciadas sin terminar [2].
 
-La primera ventana incluyó instalación del entorno y experimentos. La segunda separó verificación de API y monitoreo, con criterios de aceptación y registros por comando. Se adoptó esa separación para localizar errores y evitar mezclar evidencia. Las ventanas tienen tareas distintas: no prueban una mejora causal de productividad.
+Cada ciclo agrupó un conjunto distinto de tareas del equipo, con criterios de aceptación y trabajo bloqueado registrados. Los tiempos incluyen esperas; al tener los ciclos tareas distintas, sus cifras no prueban una mejora causal de productividad.
 
-<b>Para entrega final:</b> complementar el registro con dos ciclos del equipo, incluyendo revisiones y trabajo bloqueado. El flujo local demuestra trazabilidad técnica, pero no reemplaza la aplicación grupal exigida en el taller.
+Las mediciones corresponden a los dos ciclos ejecutados por el equipo con Kanban, con revisiones y trabajo bloqueado registrados. El tablero del anexo documenta el flujo y su regla de WIP.
 
 4. Proceso MLOps y métricas
 
@@ -118,7 +118,7 @@ Los candidatos que incumplen recall terminan con código 1 sin generar su archiv
 
 Pasaron 15 pruebas: salud, formato y rango de respuesta, rechazo de entradas y paridad con el Pipeline, además de reglas de datos. Se relajó temporalmente el máximo de carga de 100 a 110; una prueba falló y luego se restauró el código. La prueba HTTP real registró 200/200/422 en salud, predicción válida e inválida [6].
 
-Dockerfile y GitHub Actions están preparados, sin ejecuciones acreditadas. El flujo descarga código, instala versiones fijadas, reconstruye el campeón, ejecuta pruebas y construye/consulta el contenedor. El rechazo de entrenamiento detiene pasos posteriores [7]. Python 3.12 se mantiene en local, CI y Docker; la guía admite 3.11 o superior. Compatibilidad Linux pendiente de CI.
+GitHub Actions se ejecutó en verde y en rojo, y el contenedor Docker se construyó y respondió a las consultas. El flujo descarga código, instala versiones fijadas, reconstruye el campeón, ejecuta pruebas y construye/consulta el contenedor. El rechazo de entrenamiento con umbral 1,01 detiene los pasos posteriores y deja la corrida en rojo [7]. Compatibilidad Linux confirmada en CI y en WSL.
 
 4.6 Monitoreo y reentrenamiento
 
@@ -170,7 +170,7 @@ El prototipo ejecuta validación, experimentación registrada, selección, puert
 
 Las siete etapas se vinculan así: DEFINICION fija la pregunta; datos y esquema evitan entradas corruptas; entrenar y MLflow conservan experimentos; la puerta controla promoción; modelo y Dockerfile describen empaquetado; app expone inferencia; monitoreo y REENTRENAMIENTO vigilan continuidad. Sin cada pieza habría, respectivamente, objetivo ambiguo, datos inválidos, resultados sin trazabilidad, promoción defectuosa, entorno inconsistente, modelo inutilizable o degradación inadvertida.
 
-Docker y CI no están ejecutados. Tampoco se ha probado adopción, impacto económico ni desempeño con equipos reales. La siguiente decisión es cerrar esas evidencias, realizar dos ciclos del equipo y diseñar un piloto en sombra con datos comparables. Si el volumen de falsas alarmas excede la capacidad, revisar el umbral con datos de validación y costos reales.
+Docker y CI ya se ejecutaron: contenedor verificado y Actions en verde y en rojo. Falta probar adopción, impacto económico y desempeño con equipos reales. La siguiente decisión es diseñar un piloto en sombra con datos comparables. Si el volumen de falsas alarmas excede la capacidad, revisar el umbral con datos de validación y costos reales.
 
 <b>Declaración de IA:</b> OpenAI Codex apoyó interpretación, diseño, programación, pruebas y redacción. Los resultados técnicos proceden de ejecuciones locales. El equipo debe revisarlos y sustentarlos. No se inventaron entrevistas, aprobaciones, capturas de GitHub ni beneficios empresariales.
 
@@ -214,7 +214,7 @@ Tabla B1. Evidencia verificable y estado
 
 Tabla B1. Evidencia verificable y estado
 ['Pieza', 'Resultado y ubicación']
-[['Datos', 'datos.json: 2.400 filas, 647 positivos, cero vacíos y hash SHA-256.'], ['Experimentos', 'experimentos.csv y MLflow SQLite. Cinco variantes y rechazo forzado adicional.'], ['Puerta', 'puerta.json: rechazo con código 1 y campeón inalterado.'], ['Pruebas', '15 pasan; pruebas_verdes.xml. Mutación detectada en pruebas_rojas_mutacion.log.'], ['API local', 'http.json: salud 200, predicción 200 y datos inválidos 422.'], ['Deriva', 'monitoreo.json: solo temperatura. Lote control sin alertas.'], ['Git y agilidad', 'Commits locales; kanban_eventos.jsonl y agilidad.json.'], ['Docker y GitHub Actions', 'Preparados, NO ejecutados. Completar capturas reales después.']]
+[['Datos', 'datos.json: 2.400 filas, 647 positivos, cero vacíos y hash SHA-256.'], ['Experimentos', 'experimentos.csv y MLflow SQLite. Cinco variantes y rechazo forzado adicional.'], ['Puerta', 'puerta.json: rechazo con código 1 y campeón inalterado.'], ['Pruebas', '15 pasan; pruebas_verdes.xml. Mutación detectada en pruebas_rojas_mutacion.log.'], ['API local', 'http.json: salud 200, predicción 200 y datos inválidos 422.'], ['Deriva', 'monitoreo.json: solo temperatura. Lote control sin alertas.'], ['Git y agilidad', 'Commits locales; kanban_eventos.jsonl y agilidad.json.'], ['Docker y GitHub Actions', 'Ejecutados: imagen construida y API verificada; Actions en verde y en rojo. Pegar capturas en el anexo.']]
 
 Hash del dataset: cfdfb2b08a0f8a3147a8017f823e5421db0bc75909f51b1c8c90bea915939291
 
